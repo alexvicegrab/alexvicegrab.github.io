@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Mr Hyde]]></title>
   <link href="http://alexvicegrab.github.io/atom.xml" rel="self"/>
   <link href="http://alexvicegrab.github.io/"/>
-  <updated>2014-01-14T02:32:06+01:00</updated>
+  <updated>2014-01-14T03:49:37+01:00</updated>
   <id>http://alexvicegrab.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Programming Baby-steps]]></title>
+    <link href="http://alexvicegrab.github.io/blog/2014/01/14/programming-baby-steps/"/>
+    <updated>2014-01-14T02:38:22+01:00</updated>
+    <id>http://alexvicegrab.github.io/blog/2014/01/14/programming-baby-steps</id>
+    <content type="html"><![CDATA[<h2>My first program</h2>
+
+<p>I knew nothing about programming until I was 21. It&rsquo;s not that I was under-age, and programming was not (yet?) prohibited, fun as it is. It&rsquo;s not that I wasn&rsquo;t a geek, I was: a Natural Sciences student at Cambridge, using a spreadsheet to track my meager expenses, running Debian (and SuSe, and Mandrake, and eventually Ubuntu) Linux on an already old-ish Acer laptop. It&rsquo;s just that somehow I had never though of it as a creative activity.</p>
+
+<p>But the summer of 2006 I had little choice. I had to write a program in (forgive me!) Visual Basic to run a cognitive experiment. My supervisor did exactly what was needed to get me up and running:</p>
+
+<ul>
+<li>declare some variables</li>
+<li>write an if statement</li>
+<li>write a while loop</li>
+<li>combine them to do a random bubble sorting</li>
+</ul>
+
+
+<p>5 minutes later he was gone and I was in front of a confusion of lines of code, each shouting for attention. Before too long, I was coding&hellip;</p>
+
+<h2>Vertical learning cliff</h2>
+
+<p>&hellip;the cliffhanger above left you wondering. Did he ever learn anything better than Visual Basic..?</p>
+
+<p>The answer is twofold:</p>
+
+<ol>
+<li>No, I learned DirectX first, which is even worse (at least were debugging and documentation is concerned)</li>
+<li>Yes, I learned Matlab. Well documented and much easier to debug (but not quite a &ldquo;proper&rdquo; programming language)</li>
+</ol>
+
+
+<p>DirectX took me to designing more visually pretty coloured dots, and then to prettier, if psychedelyc, swirls of cyan and purple.</p>
+
+<p>Matlab taught me modularisation, and DRY (Don&rsquo;t Repeat Yourself) the hard way. I wrote scripts for the (mostly) &ldquo;automatic analysis&rdquo; package for SPM (Statistical Parametric Mapping). This was my first dabbling with XML files, which we used like aluminium, to wrap up analysis modules and build a pipeline scaffold. I picked up a Perl of wisdom or two and some Unreal UDK when working with Virtual Reality (VR) experiments. Finally, I dipped into a bit of R but, tired of pirates, walked the plank.</p>
+
+<h2>The plateau phase</h2>
+
+<p>Years passed as I workd on my PhD and made a few (unsuccessful) attempts to learn Python. Learned bits and pieces about the bash terminal, compiling from source and other Unix affairs. I dabbled in Version Control packages, and switched from Subversion (SVN) to Github.</p>
+
+<p>Eventually, at the start of 2013 I realised I wanted more from life (and coding), so I took upon myself to stop being a mere coder and become a programmer.</p>
+
+<p>Determined to learn the foundations of as many programming languages as I could, I enrolled in <a href="http://www.codecademy.com">Codecademy</a> and finished all the courses there (HTML/CSS, PHP, jQuery, JavaScript, Ruby, Python). Flat and gray knowledge, but a foundation to build more on top.</p>
+
+<h2>High resolution</h2>
+
+<p>One half of my 2014 resolution has been to learn to program in iOS. One Xcode installation and a Lovecraft themed To-Do list app later I feel (almost) ready to make a funky mathematical toy.</p>
+
+<p>This blog is the other half, a way to document this learning process. Importantly, the very creation of this blog had to be uber-geeky. No Blogger, or Wordpress or Movable Type would do. Intead it uses Github Pages, Jekyll and Octopress.</p>
+
+<p>351 days to go&hellip;</p>
+]]></content>
+  </entry>
   
 </feed>
