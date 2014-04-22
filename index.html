@@ -94,7 +94,7 @@
   </header>
 
 
-  <div class="entry-content"><h2>Time is <s>no</s> object</h2>
+  <div class="entry-content"><h2>Time is <s>    no</s>     object</h2>
 
 <p>I&rsquo;ve been wishing to dabble in Object Oriented Programming (OOP) for a while. Despite understanding the core concepts, however, the jargon and my limited knowledge of OOP-centered languages has kept me at bay. Only 2 problems really that can be solved thus:</p>
 
@@ -102,7 +102,7 @@
 <li>Jargon
 
 <ul>
-<li>If you can&rsquo;t beat them, <s>join</s> simplify them. If I can <strong>explain</strong> the jargon to someone else (you), it will stop being an issue</li>
+<li>If you can&rsquo;t beat them, <s>    join</s>     simplify them. If I can <strong>explain</strong> the jargon to someone else (you), it will stop being an issue</li>
 </ul>
 </li>
 <li>Knowledge
@@ -114,11 +114,11 @@
 </ol>
 
 
-<h2>To learn something well, <s>teach</s> build it</h2>
+<h2>To learn something well, <s>    teach</s>     build it</h2>
 
 <p>To learn OOP in Matlab, I decided to build a scientific toolbox for analysing multimedia data, since some of my current projects require this.</p>
 
-<p>&hellip;well, re-build. The toolbox existed before but used a rather messy set of procedural scripts and functions. If only I could <s>steal</s> acquire the knowledge&hellip; Thankfully, there is <a href="http://yagtom.googlecode.com/svn/trunk/html/objectOriented.html">one</a> or <a href="http://yagtom.googlecode.com/svn/trunk/html/objectOrientedAdvanced.html">two</a> excellent reference guides that are generally clearer than Matlab&rsquo;s own <a href="http://www.mathworks.nl/help/matlab/object-oriented-programming.html">documentation</a>.</p>
+<p>&hellip;well, re-build. The toolbox existed before but used a rather messy set of procedural scripts and functions. If only I could <s>    steal</s>     acquire the knowledge&hellip; Thankfully, there is <a href="http://yagtom.googlecode.com/svn/trunk/html/objectOriented.html">one</a> or <a href="http://yagtom.googlecode.com/svn/trunk/html/objectOrientedAdvanced.html">two</a> excellent reference guides that are generally clearer than Matlab&rsquo;s own <a href="http://www.mathworks.nl/help/matlab/object-oriented-programming.html">documentation</a>.</p>
 
 <p>I made a neat little <a href="https://github.com/alexvicegrab/visualAnalysis">Visual Analysis toolbox</a> (which remains <strong>work in progress</strong>) and learned a lot about:</p>
 
@@ -137,26 +137,29 @@
 
 <p>An optional thing to do when delving into OOP Matlab is to make a package. A package consists of a folder where all your classes will be stored. Let&rsquo;s try making one in Matlab.</p>
 
-<blockquote><blockquote><blockquote><p>mkdir +package
-cd +package</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; mkdir +package
+&gt;&gt; cd +package
+</code></pre></blockquote>
 
 <h2>Doing it with class</h2>
 
 <p>Inside the package, we can start creating class files. Because our new class is excellent, let&rsquo;s call it <strong>superclass</strong>&hellip;</p>
 
-<blockquote><blockquote><blockquote><p>edit superclass.m</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; edit superclass.m
+</code></pre></blockquote>
 
 <p>Inside, we will need to define it, so it will look something like</p>
 
-<blockquote><p>classdef superclass
-   % SUPERCLASS is an excellent class</p>
+<blockquote><pre><code>classdef superclass
+   % SUPERCLASS is an excellent class
 
-<p>   properties
-   end</p>
-
-<p>   methods
+   properties
    end
-end</p></blockquote>
+
+   methods
+   end
+end
+</code></pre></blockquote>
 
 <p>Right now our class is rather empty, let&rsquo;s fill &lsquo;er up.</p>
 
@@ -184,32 +187,21 @@ end</p></blockquote>
 
 <p>Let&rsquo;s go back to our class and make some properties, we can have a couple of property blocks:</p>
 
-<blockquote><p>[&hellip;]
-   properties</p>
-
-<pre><code>  clothes
-</code></pre>
-
-<p>   end
-   properties (SetAccess = &lsquo;protected&rsquo;)</p>
-
-<pre><code>  face
-</code></pre>
-
-<p>   end
-   properties (SetAccess = &lsquo;private&rsquo;, GetAccess = &lsquo;private&rsquo;)</p>
-
-<pre><code>  heart
-</code></pre>
-
-<p>   end
-   properties (Constant = true)</p>
-
-<pre><code>  MORTAL = true;
-</code></pre>
-
-<p>   end
-[&hellip;]</p></blockquote>
+<blockquote><pre><code>[...]
+   properties
+      clothes
+   end
+   properties (SetAccess = 'protected')
+      face
+   end
+   properties (SetAccess = 'private', GetAccess = 'private')
+      heart
+   end
+   properties (Constant = true)
+      MORTAL = true;
+   end
+[...]
+</code></pre></blockquote>
 
 <p>We are letting anyone look at and touch our <strong>clothes</strong>, they are <strong>public</strong> because they are not very important.</p>
 
@@ -219,46 +211,38 @@ end</p></blockquote>
 
 <p>Some other things about us are <strong>constant</strong> and can&rsquo;t be changed, like the fact that we are <strong>MORTAL</strong>.</p>
 
-<h2>Crystal <s>clear</s> meth<s>ods</s></h2>
+<h2>Crystal <s>    clear</s>     meth<s>    ods</s>    </h2>
 
 <p>We will need a couple of methods in our class. One of these has to be a constructor. Again, we can make several method blocks.</p>
 
-<blockquote><p>[&hellip;]
+<blockquote><pre><code>[...]
    methods
-   % This is the constructor</p>
-
-<pre><code>        function obj = superclass(clothes, face, heart)
-     if(nargin == 3)
-         obj.clothes = clothes;
-         obj.face    = face;
-         obj.heart   = heart;
-           else
-                       warning('A superclass needs clothes, a face and a heart')
-     end
+   % This is the constructor
+            function obj = superclass(clothes, face, heart)
+         if(nargin == 3)
+             obj.clothes = clothes;
+             obj.face    = face;
+             obj.heart   = heart;
+               else
+                           warning('A superclass needs clothes, a face and a heart')
+         end
+          end
+      function obj = program(obj)
+               fprintf('Clack, clack, clack\n')
+          end
+   end
+   methods (Access = 'private')
+              function obj = sleep(obj)
+               fprintf('ZzzzZ\n')
+          end
+   end
+   methods (Static = true)
+      function soul()
+         fprintf('Some immortal soul will be reincarnated into the next instance\n')
       end
-  function obj = program(obj)
-           fprintf('Clack, clack, clack\n')
-      end
-</code></pre>
-
-<p>   end
-   methods (Access = &lsquo;private&rsquo;)</p>
-
-<pre><code>          function obj = sleep(obj)
-           fprintf('ZzzzZ\n')
-      end
-</code></pre>
-
-<p>   end
-   methods (Static = true)</p>
-
-<pre><code>  function soul()
-     fprintf('Some immortal soul will be reincarnated into the next instance\n')
-  end
-</code></pre>
-
-<p>   end
-[&hellip;]</p></blockquote>
+   end
+[...]
+</code></pre></blockquote>
 
 <p>The constructor method makes an <strong>instance</strong> of our <em>superclass</em> class. It is a <strong>public</strong> method, since otherwise you&rsquo;d not be able to make an instance.</p>
 
@@ -272,106 +256,109 @@ end</p></blockquote>
 
 <p>There&rsquo;s little point to make a class unless you want to make objects. Still, let&rsquo;s try the static method:</p>
 
-<blockquote><blockquote><blockquote><p>cd ..                                            % We need to be outside the package folder to call it
-package.superclass.soul()    % &lsquo;package.&rsquo; is only needed if the class is inside a package</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; cd ..                                            % We need to be outside the package folder to call it
+&gt;&gt; package.superclass.soul()    % 'package.' is only needed if the class is inside a package
+</code></pre></blockquote>
 
 <p>Without much ado, let&rsquo;s also make an instance of it:</p>
 
-<blockquote><blockquote><blockquote><p>Vader = package.superclass(&lsquo;robe&rsquo;, 1, false);</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; Vader = package.superclass('robe', 1, false);
+</code></pre></blockquote>
 
 <p>We have created a superclass <strong>object</strong> called <strong>Vader</strong> wearing a robe, having 1 face and no heart. Let&rsquo;s see if he knows programming&hellip;</p>
 
-<blockquote><blockquote><blockquote><p>Vader.program();</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; Vader.program();
+</code></pre></blockquote>
 
 <p>He does! Let&rsquo;s make him sleep&hellip;</p>
 
-<blockquote><blockquote><blockquote><p>Vader.sleep();</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; Vader.sleep();
+</code></pre></blockquote>
 
 <p>Seems like we can&rsquo;t make him sleep. For our insolence he&rsquo;s likely to do a Jedi choke. Maybe if he has some heart he won&rsquo;t do it though&hellip;</p>
 
-<blockquote><blockquote><blockquote><p>Vader.heart</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; Vader.heart
+</code></pre></blockquote>
 
 <p>&hellip;we will never know!</p>
 
-<h2>The <s>meek</s> subclass shall inherit the <s>earth</s> superclass</h2>
+<h2>The <s>    meek</s>     subclass shall inherit the <s>    earth</s>     superclass</h2>
 
 <p>Now that we have an excellent <em>superclass</em>, we can make a <strong>subclass</strong> that will <strong>inherit</strong> properties and methods from it.</p>
 
-<blockquote><blockquote><blockquote><p>cd +package
-edit subclass.m</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; cd +package
+&gt;&gt; edit subclass.m
+</code></pre></blockquote>
 
 <p>Since we want to just see what we&rsquo;ve inherited, let&rsquo;s make it simple but add a simple constructor:</p>
 
-<blockquote><p>classdef subclass &lt; superclass
-   % SUBCLASS is a subpar class</p>
+<blockquote><pre><code>classdef subclass &lt; superclass
+   % SUBCLASS is a subpar class
 
-<p>   properties
-   end</p>
+   properties
+   end
 
-<p>   methods</p>
-
-<pre><code>  function obj = superclass(clothes, face, heart)
-     if(nargin == 3)
-         obj.clothes = clothes;
-         obj.face    = face;
-         obj.heart   = heart;
-           else
-                       warning('A subclass needs clothes, a face and a heart')
-     end
-      end
-</code></pre>
-
-<p>   end
-end</p></blockquote>
+   methods
+      function obj = superclass(clothes, face, heart)
+         if(nargin == 3)
+             obj.clothes = clothes;
+             obj.face    = face;
+             obj.heart   = heart;
+               else
+                           warning('A subclass needs clothes, a face and a heart')
+         end
+          end
+   end
+end
+</code></pre></blockquote>
 
 <p>Let&rsquo;s see if we can make an instance of it:</p>
 
-<blockquote><blockquote><blockquote><p>cd ..
-Luke = package.subclass(&lsquo;robe&rsquo;, 1, true)</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; cd ..
+&gt;&gt; Luke = package.subclass('robe', 1, true)
+</code></pre></blockquote>
 
 <p>Seems like we can&rsquo;t. The <strong>heart</strong> property we&rsquo;d have wished to inherit from <em>superclass</em> is <strong>private</strong> to the superclass. But we can adjust our constructor:</p>
 
-<blockquote><p>[&hellip;]</p>
+<blockquote><pre><code>[...]
+      function obj = superclass(clothes, face, heart)
+         if(nargin == 2)
+             obj.clothes = clothes;
+             obj.face    = face;
+               else
+                           warning('A subclass needs clothes and a face')
+         end
+      end
+[...]
+</code></pre></blockquote>
 
-<pre><code>  function obj = superclass(clothes, face, heart)
-     if(nargin == 2)
-         obj.clothes = clothes;
-         obj.face    = face;
-           else
-                       warning('A subclass needs clothes and a face')
-     end
-  end
-</code></pre>
+<p>Heartless, I know, but we have little choice. Still, Luke is still able to do some of the things his <s>    father</s>     parent class can do:</p>
 
-<p>[&hellip;]</p></blockquote>
-
-<p>Heartless, I know, but we have little choice. Still, Luke is still able to do some of the things his <s>father</s> parent class can do:</p>
-
-<blockquote><blockquote><blockquote><p>Luke = package.subclass(&lsquo;robe&rsquo;, 1)
-Luke.program();
-Luke.sleep();</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; Luke = package.subclass('robe', 1)
+&gt;&gt; Luke.program();
+&gt;&gt; Luke.sleep();
+</code></pre></blockquote>
 
 <p>So, he&rsquo;s still has some programming talent but has some sleepless nights in store, since the <strong>sleep</strong> method from <em>superclass</em> is private. Also, notice that the <em>superclass</em> constructor is called with 0 arguments, in case it needs to do something important. In this case, it just reminds us that Luke is a subclass, since he is heartless.</p>
 
-<h2>Dynamic <s>duo</s> dispatch</h2>
+<h2>Dynamic <s>    duo</s>     dispatch</h2>
 
 <p>Let&rsquo;s power up Luke&rsquo;s programming to make up for his faults. We can add our own <strong>program</strong> method that will override the <em>superclass</em> method.</p>
 
-<blockquote><p>[&hellip;]</p>
+<blockquote><pre><code>[...]
+      function obj = program(obj)
+         fprintf('Click, click, click, click\n')
+      end
+[...]
 
-<pre><code>  function obj = program(obj)
-     fprintf('Click, click, click, click\n')
-  end
-</code></pre>
-
-<p>[&hellip;]</p>
-
-<blockquote><blockquote><p>Luke = package.subclass(&lsquo;robe&rsquo;, 1)
-Luke.program();</p></blockquote></blockquote></blockquote>
+&gt;&gt; Luke = package.subclass('robe', 1)
+&gt;&gt; Luke.program();
+</code></pre></blockquote>
 
 <p>We can call this differently too:</p>
 
-<blockquote><blockquote><blockquote><p>program(Luke);</p></blockquote></blockquote></blockquote>
+<blockquote><pre><code>&gt;&gt; program(Luke);
+</code></pre></blockquote>
 
 <p>This is the start of <strong>method overloading</strong>, which means that we can make the <em>same</em> method call do different things depending on the object that calls it. We can do the same with matlab functions like <strong>sum()</strong> and <strong>plot()</strong>. But I&rsquo;ll leave that as an exercise to the reader. That is you, youngling Jedi&hellip;</p>
 </div>
