@@ -215,13 +215,13 @@ end
 <blockquote><pre><code>[...]
    methods
    % This is the constructor
-            function obj = superclass(clothes, face, heart)
+      function obj = superclass(clothes, face, heart)
          if(nargin == 3)
              obj.clothes = clothes;
              obj.face    = face;
              obj.heart   = heart;
                else
-                           warning('A superclass needs clothes, a face and a heart')
+            warning('A superclass needs clothes, a face and a heart')
          end
           end
       function obj = program(obj)
@@ -229,7 +229,7 @@ end
           end
    end
    methods (Access = 'private')
-              function obj = sleep(obj)
+      function obj = sleep(obj)
                fprintf('ZzzzZ\n')
           end
    end
@@ -302,7 +302,7 @@ end
              obj.face    = face;
              obj.heart   = heart;
                else
-                           warning('A subclass needs clothes, a face and a heart')
+                          warning('A subclass needs clothes, a face and a heart')
          end
           end
    end
@@ -323,7 +323,7 @@ end
              obj.clothes = clothes;
              obj.face    = face;
                else
-                           warning('A subclass needs clothes and a face')
+                          warning('A subclass needs clothes and a face')
          end
       end
 [...]
@@ -347,8 +347,11 @@ end
          fprintf('Click, click, click, click\n')
       end
 [...]
+</code></pre></blockquote>
 
-&gt;&gt; Luke = package.subclass('robe', 1)
+<p>This should work&hellip;</p>
+
+<blockquote><pre><code>&gt;&gt; Luke = package.subclass('robe', 1)
 &gt;&gt; Luke.program();
 </code></pre></blockquote>
 
