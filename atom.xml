@@ -4,7 +4,7 @@
   <title><![CDATA[Mr Hyde]]></title>
   <link href="http://alexvicegrab.github.io/atom.xml" rel="self"/>
   <link href="http://alexvicegrab.github.io/"/>
-  <updated>2014-04-22T22:42:13+02:00</updated>
+  <updated>2014-04-22T22:45:01+02:00</updated>
   <id>http://alexvicegrab.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -150,9 +150,9 @@ end
          else
              warning('A superclass needs clothes, a face and a heart')
          end
-          end
+      end
       function obj = program(obj)
-               fprintf('Clack, clack, clack\n')
+         fprintf('Clack, clack, clack\n')
       end
    end
    methods (Access = 'private')
