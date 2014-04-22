@@ -304,10 +304,10 @@ end
              obj.clothes = clothes;
              obj.face    = face;
              obj.heart   = heart;
-               else
-                          warning('A subclass needs clothes, a face and a heart')
+         else
+             warning('A subclass needs clothes, a face and a heart')
          end
-          end
+      end
    end
 end
 </code></pre></blockquote>
@@ -325,8 +325,8 @@ end
          if(nargin == 2)
              obj.clothes = clothes;
              obj.face    = face;
-               else
-                          warning('A subclass needs clothes and a face')
+         else
+            warning('A subclass needs clothes and a face')
          end
       end
 [...]
