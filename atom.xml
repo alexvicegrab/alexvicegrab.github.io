@@ -4,7 +4,7 @@
   <title><![CDATA[Mr Hyde]]></title>
   <link href="http://alexvicegrab.github.io/atom.xml" rel="self"/>
   <link href="http://alexvicegrab.github.io/"/>
-  <updated>2014-04-22T22:38:04+02:00</updated>
+  <updated>2014-04-22T22:40:33+02:00</updated>
   <id>http://alexvicegrab.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -147,18 +147,18 @@ end
              obj.clothes = clothes;
              obj.face    = face;
              obj.heart   = heart;
-               else
-            warning('A superclass needs clothes, a face and a heart')
+         else
+             warning('A superclass needs clothes, a face and a heart')
          end
           end
       function obj = program(obj)
                fprintf('Clack, clack, clack\n')
-          end
+      end
    end
    methods (Access = 'private')
       function obj = sleep(obj)
-               fprintf('ZzzzZ\n')
-          end
+         fprintf('ZzzzZ\n')
+      end
    end
    methods (Static = true)
       function soul()
