@@ -4,7 +4,7 @@
   <title><![CDATA[Mr Hyde]]></title>
   <link href="http://alexvicegrab.github.io/atom.xml" rel="self"/>
   <link href="http://alexvicegrab.github.io/"/>
-  <updated>2014-04-27T14:04:27+02:00</updated>
+  <updated>2014-04-27T14:08:12+02:00</updated>
   <id>http://alexvicegrab.github.io/</id>
   <author>
     <name><![CDATA[Alejandro Vicente Grabovetsky]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Making a Web-app With Ruby on Rails (Vol. 1)]]></title>
+    <title type="html"><![CDATA[Making a web-app with Ruby on Rails (vol. 1)]]></title>
     <link href="http://alexvicegrab.github.io/blog/2014/04/27/making-a-web-app-with-ruby-on-rails-vol-1/"/>
     <updated>2014-04-27T13:25:01+02:00</updated>
     <id>http://alexvicegrab.github.io/blog/2014/04/27/making-a-web-app-with-ruby-on-rails-vol-1</id>
@@ -459,7 +459,7 @@ end
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Programming Baby-steps]]></title>
+    <title type="html"><![CDATA[Programming baby-steps]]></title>
     <link href="http://alexvicegrab.github.io/blog/2014/01/14/programming-baby-steps/"/>
     <updated>2014-01-14T02:38:22+01:00</updated>
     <id>http://alexvicegrab.github.io/blog/2014/01/14/programming-baby-steps</id>
