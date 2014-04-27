@@ -4,7 +4,7 @@
   <title><![CDATA[Mr Hyde]]></title>
   <link href="http://alexvicegrab.github.io/atom.xml" rel="self"/>
   <link href="http://alexvicegrab.github.io/"/>
-  <updated>2014-04-27T13:18:59+02:00</updated>
+  <updated>2014-04-27T13:45:24+02:00</updated>
   <id>http://alexvicegrab.github.io/</id>
   <author>
     <name><![CDATA[Alejandro Vicente Grabovetsky]]></name>
@@ -12,6 +12,148 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Making a Web-app With Ruby on Rails (Vol. 1)]]></title>
+    <link href="http://alexvicegrab.github.io/blog/2014/04/27/making-a-web-app-with-ruby-on-rails-vol-1/"/>
+    <updated>2014-04-27T13:25:01+02:00</updated>
+    <id>http://alexvicegrab.github.io/blog/2014/04/27/making-a-web-app-with-ruby-on-rails-vol-1</id>
+    <content type="html"><![CDATA[<h2>Jewels, trains and web-apps</h2>
+
+<p>I&rsquo;m learning how to build web apps using the <a href="http://rubyonrails.org/">Ruby on Rails</a> framework. <strong>Rails</strong> is a framework based on the <strong>Ruby</strong> language that famously predicates <em>convention over configuration</em>, to help ease the making of web-apps. Share with me in the excitement, adventure and experience points. Hmmm&hellip; on second thought, not the experience points.</p>
+
+<p>When I&rsquo;m not doing science or programming. I dance Argentine Tango and DJ. I also translate tango lyrics. My translation and DJing <a href="http://www.eltangoteespera.com">website</a> is one of several websites doing this. Too bad that it&rsquo;s difficult to aggregate all these translations into one place and find who has translated what.</p>
+
+<p>Maybe someone could create a database where all these lyrics are organised. Maybe that someone is me. Let&rsquo;s find out.</p>
+
+<h2>Getting our gear together</h2>
+
+<p>I&rsquo;m going to gloss over how to install Rails on your operating system, as there are many a resource on how to do this. If you are on Linux or a Mac, the Rail&rsquo;s Guides <a href="http://guides.rubyonrails.org/getting_started.html">first guide</a> should sort you out. Otherwise, if you are like me and have a Mac, you might need soemthing a bit more <a href="http://railsapps.github.io/installrubyonrails-mac.html">involved</a>. If you are on Windows&hellip; sorry mate, you&rsquo;re (<a href="https://www.virtualbox.org/">almost</a>) on your own! ;&ndash;)</p>
+
+<p>Since I&rsquo;m going to be hosting my app in Heroku, I will also need to have PostgreSQL installed. On the Mac, this is as simple as &lsquo;brew install postgresql&rsquo; if you use the <a href="http://brew.sh/">Homebrew</a> package manager or with the <a href="http://postgresapp.com/">Postgres.app</a>. Procedures for this will vary across Linux distros, and if you are using Linux you are probably savvy enough to use your package manager.</p>
+
+<p>You will also need to get a <a href="http://www.heroku.com">Heroku</a> account, and set up some <a href="https://devcenter.heroku.com/articles/quickstart">SSH keys</a> on your system, and a detailed <a href="https://devcenter.heroku.com/articles/getting-started-with-rails4">walkthrough</a> for setting up a Rails project.</p>
+
+<p>Let it be no secret that I have borrowed heavily from these resources.</p>
+
+<h2>The quest begins!</h2>
+
+<p>Let&rsquo;s ask rails to create a new project that we will call &lsquo;tangoLyricsDB&rsquo;</p>
+
+<pre><code>$ rails new tangoLyricsDB --database=postgresql
+</code></pre>
+
+<p>Let&rsquo;s cd inside and see what is there</p>
+
+<pre><code>$ cd tangoLyricsDB
+    $ ls
+</code></pre>
+
+<p>We should see a set of files and directories, which make up the application. The most important ones for us initially will be the <em>app</em> folder, which contains our MVC (Model View Controller) files.</p>
+
+<p>Before we can put our app on Heroku, we need to set up some version control with git. If you don&rsquo;t know git, I&rsquo;d suggest you do this <a href="http://try.github.io/">tutorial</a>.</p>
+
+<pre><code>$ git init
+    $ git add .
+    $ git commit -m 'Raw Rails app'
+</code></pre>
+
+<p>Now we&rsquo;re ready to put our app on Heroku</p>
+
+<pre><code>$ heroku create
+</code></pre>
+
+<p>You should see something along these lines:</p>
+
+<pre><code>Creating frozen-samurai-9999... done, stack is cedar
+http://frozen-samurai-9999.herokuapp.com/ | git@heroku.com:frozen-samurai-9999.git
+Git remote heroku added
+</code></pre>
+
+<p>Now we can push it all to the cloud:</p>
+
+<pre><code>$ git push heroku master
+</code></pre>
+
+<p>If it asks you about RSA fingerprints, type &lsquo;yes&rsquo;.</p>
+
+<p>However, if we go to our app address (i.e. <a href="http://frozen-samurai-9999.herokuapp.com/">http://frozen-samurai-9999.herokuapp.com/</a>), we see but a warning message and not even a welcome screen.</p>
+
+<p>The reasons for these are manifold. Let&rsquo;s solve them in turn!</p>
+
+<h3>1. rails_12factor</h3>
+
+<p>We saw this warning when we first pushed to heroku:</p>
+
+<pre><code>    -----&gt; WARNINGS:
+           Include 'rails_12factor' gem to enable all platform features
+</code></pre>
+
+<p>Let&rsquo;s add this _gem) it to project by opening the Gemfile in a text editor and adding at the end:</p>
+
+<pre><code>    # Required by Heroku
+    gem 'rails_12factor', group: :production
+</code></pre>
+
+<p>&hellip;then we need to install it:</p>
+
+<pre><code>% bundle install
+</code></pre>
+
+<h3>2. welcome page</h3>
+
+<p>We don&rsquo;t have any page on which to land, so let&rsquo;s harness the power of MVC and create one. First we make a <strong>controller</strong>:</p>
+
+<pre><code>$ rails generate controller welcome
+</code></pre>
+
+<p>The let us make a <strong>view</strong> by creating an index page under app/views/welcome/index.html.erb containing:</p>
+
+<pre><code>    &lt;h2&gt;Tango Translation Database/h2&gt;
+    &lt;p&gt;
+      The database is not working yet, but it can tell you the time: &lt;%= Time.now %&gt;
+    &lt;/p&gt;
+</code></pre>
+
+<p>Then we need to <strong>route</strong> the user to the right place when we open the app by editing the routes in config/routes.rb and adding a line so it looks like:</p>
+
+<pre><code>Rails.application.routes.draw do
+  root 'welcome#index'
+  [... Some comments ...]
+end
+</code></pre>
+
+<h3>3. migrate the database</h3>
+
+<p>You will probably also need to create and migrate your rails database by running:</p>
+
+<pre><code>$ rake db:create db:migrate
+</code></pre>
+
+<h3>Making it all work</h3>
+
+<p>Check that it all works locally by running the rails server:</p>
+
+<pre><code>$ rails server
+</code></pre>
+
+<p>&hellip;and visiting the local webpage <a href="http://localhost:3000.">http://localhost:3000.</a></p>
+
+<p>If it all works, let&rsquo;s add the files to the staging area, commit them and push it to the heroku git repository:</p>
+
+<pre><code>% git add .
+    % git commit -m 'Added rails_12factor and routes'
+    % git push heroku master
+</code></pre>
+
+<p>If you now go to your app address you should see your <del>beautiful</del> webpage:</p>
+
+<pre><code>% heroku open
+</code></pre>
+
+<p>So we have a basic website, in the next installment we will start to flesh it out.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Object Oriented Matlab]]></title>
