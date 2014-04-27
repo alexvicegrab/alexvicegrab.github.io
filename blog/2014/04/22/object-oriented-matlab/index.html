@@ -94,7 +94,7 @@
   </header>
 
 
-<div class="entry-content"><h2>Time is <s>    no</s>     object</h2>
+<div class="entry-content"><h2>Time is <del>no</del> object</h2>
 
 <p>I&rsquo;ve been wishing to dabble in Object Oriented Programming (OOP) for a while. Despite understanding the core concepts, however, the jargon and my limited knowledge of OOP-centered languages has kept me at bay. Only 2 problems really that can be solved thus:</p>
 
@@ -102,7 +102,7 @@
 <li>Jargon
 
 <ul>
-<li>If you can&rsquo;t beat them, <s>    join</s>     simplify them. If I can <strong>explain</strong> the jargon to someone else (you), it will stop being an issue</li>
+<li>If you can&rsquo;t beat them, <del>join</del> simplify them. If I can <strong>explain</strong> the jargon to someone else (you), it will stop being an issue</li>
 </ul>
 </li>
 <li>Knowledge
@@ -114,11 +114,11 @@
 </ol>
 
 
-<h2>To learn something well, <s>    teach</s>     build it</h2>
+<h2>To learn something well, <del>teach</del> build it</h2>
 
 <p>To learn OOP in Matlab, I decided to build a scientific toolbox for analysing multimedia data, since some of my current projects require this.</p>
 
-<p>&hellip;well, re-build. The toolbox existed before but used a rather messy set of procedural scripts and functions. If only I could <s>    steal</s>     acquire the knowledge&hellip; Thankfully, there is <a href="http://yagtom.googlecode.com/svn/trunk/html/objectOriented.html">one</a> or <a href="http://yagtom.googlecode.com/svn/trunk/html/objectOrientedAdvanced.html">two</a> excellent reference guides that are generally clearer than Matlab&rsquo;s own <a href="http://www.mathworks.nl/help/matlab/object-oriented-programming.html">documentation</a>.</p>
+<p>&hellip;well, re-build. The toolbox existed before but used a rather messy set of procedural scripts and functions. If only I could <del>steal</del> acquire the knowledge&hellip; Thankfully, there is <a href="http://yagtom.googlecode.com/svn/trunk/html/objectOriented.html">one</a> or <a href="http://yagtom.googlecode.com/svn/trunk/html/objectOrientedAdvanced.html">two</a> excellent reference guides that are generally clearer than Matlab&rsquo;s own <a href="http://www.mathworks.nl/help/matlab/object-oriented-programming.html">documentation</a>.</p>
 
 <p>I made a neat little <a href="https://github.com/alexvicegrab/visualAnalysis">Visual Analysis toolbox</a> (which remains <strong>work in progress</strong>) and learned a lot about:</p>
 
@@ -137,20 +137,20 @@
 
 <p>An optional thing to do when delving into OOP Matlab is to make a package. A package consists of a folder where all your classes will be stored. Let&rsquo;s try making one in Matlab.</p>
 
-<blockquote><pre><code>&gt;&gt; mkdir +package
+<pre><code>&gt;&gt; mkdir +package
 &gt;&gt; cd +package
-</code></pre></blockquote>
+</code></pre>
 
 <h2>Doing it with class</h2>
 
 <p>Inside the package, we can start creating class files. Because our new class is excellent, let&rsquo;s call it <strong>superclass</strong>&hellip;</p>
 
-<blockquote><pre><code>&gt;&gt; edit superclass.m
-</code></pre></blockquote>
+<pre><code>&gt;&gt; edit superclass.m
+</code></pre>
 
 <p>Inside, we will need to define it, so it will look something like</p>
 
-<blockquote><pre><code>classdef superclass
+<pre><code>classdef superclass
    % SUPERCLASS is an excellent class
 
    properties
@@ -159,7 +159,7 @@
    methods
    end
 end
-</code></pre></blockquote>
+</code></pre>
 
 <p>Right now our class is rather empty, let&rsquo;s fill &lsquo;er up.</p>
 
@@ -187,7 +187,7 @@ end
 
 <p>Let&rsquo;s go back to our class and make some properties, we can have a couple of property blocks:</p>
 
-<blockquote><pre><code>[...]
+<pre><code>[...]
    properties
       clothes
    end
@@ -201,7 +201,7 @@ end
       MORTAL = true;
    end
 [...]
-</code></pre></blockquote>
+</code></pre>
 
 <p>We are letting anyone look at and touch our <strong>clothes</strong>, they are <strong>public</strong> because they are not very important.</p>
 
@@ -211,11 +211,11 @@ end
 
 <p>Some other things about us are <strong>constant</strong> and can&rsquo;t be changed, like the fact that we are <strong>MORTAL</strong>.</p>
 
-<h2>Crystal <s>    clear</s>     meth<s>    ods</s>    </h2>
+<h2>Crystal <del>clear</del> meth<del>ods</del></h2>
 
 <p>We will need a couple of methods in our class. One of these has to be a constructor. Again, we can make several method blocks.</p>
 
-<blockquote><pre><code>[...]
+<pre><code>[...]
    methods
    % This is the constructor
       function obj = superclass(clothes, face, heart)
@@ -242,7 +242,7 @@ end
       end
    end
 [...]
-</code></pre></blockquote>
+</code></pre>
 
 <p>The constructor method makes an <strong>instance</strong> of our <em>superclass</em> class. It is a <strong>public</strong> method, since otherwise you&rsquo;d not be able to make an instance.</p>
 
@@ -256,43 +256,43 @@ end
 
 <p>There&rsquo;s little point to make a class unless you want to make objects. Still, let&rsquo;s try the static method:</p>
 
-<blockquote><pre><code>&gt;&gt; cd ..   % We need to be outside the package folder to call it
+<pre><code>&gt;&gt; cd ..   % We need to be outside the package folder to call it
 &gt;&gt; package.superclass.soul()    % 'package.' is only needed if the class is inside a package
-</code></pre></blockquote>
+</code></pre>
 
 <p>Without much ado, let&rsquo;s also make an instance of it:</p>
 
-<blockquote><pre><code>&gt;&gt; Vader = package.superclass('robe', 1, false);
-</code></pre></blockquote>
+<pre><code>&gt;&gt; Vader = package.superclass('robe', 1, false);
+</code></pre>
 
 <p>We have created a superclass <strong>object</strong> called <strong>Vader</strong> wearing a robe, having 1 face and no heart. Let&rsquo;s see if he knows programming&hellip;</p>
 
-<blockquote><pre><code>&gt;&gt; Vader.program();
-</code></pre></blockquote>
+<pre><code>&gt;&gt; Vader.program();
+</code></pre>
 
 <p>He does! Let&rsquo;s make him sleep&hellip;</p>
 
-<blockquote><pre><code>&gt;&gt; Vader.sleep();
-</code></pre></blockquote>
+<pre><code>&gt;&gt; Vader.sleep();
+</code></pre>
 
 <p>Seems like we can&rsquo;t make him sleep. For our insolence he&rsquo;s likely to do a Jedi choke. Maybe if he has some heart he won&rsquo;t do it though&hellip;</p>
 
-<blockquote><pre><code>&gt;&gt; Vader.heart
-</code></pre></blockquote>
+<pre><code>&gt;&gt; Vader.heart
+</code></pre>
 
 <p>&hellip;we will never know!</p>
 
-<h2>The <s>    meek</s>     subclass shall inherit the <s>    earth</s>     superclass</h2>
+<h2>The <del>meek</del> subclass shall inherit the <del>earth</del> superclass</h2>
 
 <p>Now that we have an excellent <em>superclass</em>, we can make a <strong>subclass</strong> that will <strong>inherit</strong> properties and methods from it.</p>
 
-<blockquote><pre><code>&gt;&gt; cd +package
+<pre><code>&gt;&gt; cd +package
 &gt;&gt; edit subclass.m
-</code></pre></blockquote>
+</code></pre>
 
 <p>Since we want to just see what we&rsquo;ve inherited, let&rsquo;s make it simple but add a simple constructor:</p>
 
-<blockquote><pre><code>classdef subclass &lt; superclass
+<pre><code>classdef subclass &lt; superclass
    % SUBCLASS is a subpar class
 
    properties
@@ -310,17 +310,17 @@ end
       end
    end
 end
-</code></pre></blockquote>
+</code></pre>
 
 <p>Let&rsquo;s see if we can make an instance of it:</p>
 
-<blockquote><pre><code>&gt;&gt; cd ..
+<pre><code>&gt;&gt; cd ..
 &gt;&gt; Luke = package.subclass('robe', 1, true)
-</code></pre></blockquote>
+</code></pre>
 
 <p>Seems like we can&rsquo;t. The <strong>heart</strong> property we&rsquo;d have wished to inherit from <em>superclass</em> is <strong>private</strong> to the superclass. But we can adjust our constructor:</p>
 
-<blockquote><pre><code>[...]
+<pre><code>[...]
       function obj = superclass(clothes, face, heart)
          if(nargin == 2)
              obj.clothes = clothes;
@@ -330,40 +330,65 @@ end
          end
       end
 [...]
-</code></pre></blockquote>
+</code></pre>
 
-<p>Heartless, I know, but we have little choice. Still, Luke is still able to do some of the things his <s>    father</s>     parent class can do:</p>
+<p>Heartless, I know, but we have little choice. Still, Luke is still able to do some of the things his <del>father</del> parent class can do:</p>
 
-<blockquote><pre><code>&gt;&gt; Luke = package.subclass('robe', 1)
+<pre><code>&gt;&gt; Luke = package.subclass('robe', 1)
 &gt;&gt; Luke.program();
 &gt;&gt; Luke.sleep();
-</code></pre></blockquote>
+</code></pre>
 
 <p>So, he&rsquo;s still has some programming talent but has some sleepless nights in store, since the <strong>sleep</strong> method from <em>superclass</em> is private. Also, notice that the <em>superclass</em> constructor is called with 0 arguments, in case it needs to do something important. In this case, it just reminds us that Luke is a subclass, since he is heartless.</p>
 
-<h2>Dynamic <s>    duo</s>     dispatch</h2>
+<h2>Dynamic <del>duo</del> dispatch</h2>
 
 <p>Let&rsquo;s power up Luke&rsquo;s programming to make up for his faults. We can add our own <strong>program</strong> method that will override the <em>superclass</em> method.</p>
 
-<blockquote><pre><code>[...]
+<pre><code>[...]
       function obj = program(obj)
          fprintf('Click, click, click, click\n')
       end
 [...]
-</code></pre></blockquote>
+</code></pre>
 
 <p>This should work&hellip;</p>
 
-<blockquote><pre><code>&gt;&gt; Luke = package.subclass('robe', 1)
+<pre><code>&gt;&gt; Luke = package.subclass('robe', 1)
 &gt;&gt; Luke.program();
-</code></pre></blockquote>
+</code></pre>
 
 <p>We can call this differently too:</p>
 
-<blockquote><pre><code>&gt;&gt; program(Luke);
-</code></pre></blockquote>
+<pre><code>&gt;&gt; program(Luke);
+</code></pre>
 
-<p>This is the start of <strong>method overloading</strong>, which means that we can make the <em>same</em> method call do different things depending on the object that calls it. We can do the same with matlab functions like <strong>sum()</strong> and <strong>plot()</strong>. But I&rsquo;ll leave that as an exercise to the reader. That is you, youngling Jedi&hellip;</p>
+<p>This is the start of <strong>method overloading</strong>, which means that we can make the <em>same</em> method call do different things depending on the object that calls it. We can do the same with matlab functions like <strong>sum()</strong> and <strong>plot()</strong>.</p>
+
+<p>Let&rsquo;s overload the plot method in our superclass, by adding a new method:</p>
+
+<pre><code>[...]
+      function obj = plot(obj)
+         image('Vader.png');
+      end
+[...]
+</code></pre>
+
+<p>So when we call the plot method on our superclass, it will try to display the &lsquo;Vader.png&rsquo; image (I hope you have a good one!), instead of using the matlab <strong>plot()</strong> function. So <em>after</em> recreating our Vader object anew from our updated superclass, let&rsquo;s try this method:</p>
+
+<pre><code>&gt;&gt; plot(Vader)
+</code></pre>
+
+<p>Again, thanks to <strong>dynamic dispatch</strong> we can have a different plot method in our subclass to instead display the entire Star Wars Episode IV movie in ASCii:</p>
+
+<pre><code>[...]
+      function obj = plot(obj)
+         unix('telnet towel.blinkenlights.nl');
+      end
+[...]
+</code></pre>
+
+<p>If you call this one, get your geeky hat on and some popcorn };&ndash;)</p>
 </div>
 
 
