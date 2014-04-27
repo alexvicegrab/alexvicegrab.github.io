@@ -125,7 +125,7 @@
 <p>Let&rsquo;s cd inside and see what is there</p>
 
 <pre><code>$ cd tangoLyricsDB
-    $ ls
+$ ls
 </code></pre>
 
 <p>We should see a set of files and directories, which make up the application. The most important ones for us initially will be the <em>app</em> folder, which contains our MVC (Model View Controller) files.</p>
@@ -133,8 +133,8 @@
 <p>Before we can put our app on Heroku, we need to set up some version control with git. If you don&rsquo;t know git, I&rsquo;d suggest you do this <a href="http://try.github.io/">tutorial</a>.</p>
 
 <pre><code>$ git init
-    $ git add .
-    $ git commit -m 'Raw Rails app'
+$ git add .
+$ git commit -m 'Raw Rails app'
 </code></pre>
 
 <p>Now we&rsquo;re ready to put our app on Heroku</p>
@@ -170,8 +170,8 @@ Git remote heroku added
 
 <p>Let&rsquo;s add this _gem) it to project by opening the Gemfile in a text editor and adding at the end:</p>
 
-<pre><code>    # Required by Heroku
-    gem 'rails_12factor', group: :production
+<pre><code># Required by Heroku
+gem 'rails_12factor', group: :production
 </code></pre>
 
 <p>&hellip;then we need to install it:</p>
@@ -221,8 +221,8 @@ end
 <p>If it all works, let&rsquo;s add the files to the staging area, commit them and push it to the heroku git repository:</p>
 
 <pre><code>% git add .
-    % git commit -m 'Added rails_12factor and routes'
-    % git push heroku master
+% git commit -m 'Added rails_12factor and routes'
+% git push heroku master
 </code></pre>
 
 <p>If you now go to your app address you should see your <del>beautiful</del> webpage:</p>
