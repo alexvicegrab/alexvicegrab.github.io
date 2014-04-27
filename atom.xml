@@ -4,7 +4,7 @@
   <title><![CDATA[Mr Hyde]]></title>
   <link href="http://alexvicegrab.github.io/atom.xml" rel="self"/>
   <link href="http://alexvicegrab.github.io/"/>
-  <updated>2014-04-27T14:08:12+02:00</updated>
+  <updated>2014-04-27T14:11:26+02:00</updated>
   <id>http://alexvicegrab.github.io/</id>
   <author>
     <name><![CDATA[Alejandro Vicente Grabovetsky]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Making a web-app with Ruby on Rails (vol. 1)]]></title>
+    <title type="html"><![CDATA[Making a web app with Ruby on Rails (vol. 1)]]></title>
     <link href="http://alexvicegrab.github.io/blog/2014/04/27/making-a-web-app-with-ruby-on-rails-vol-1/"/>
     <updated>2014-04-27T13:25:01+02:00</updated>
     <id>http://alexvicegrab.github.io/blog/2014/04/27/making-a-web-app-with-ruby-on-rails-vol-1</id>
-    <content type="html"><![CDATA[<h2>Jewels, trains and web-apps</h2>
+    <content type="html"><![CDATA[<h2>Jewels, trains and web apps</h2>
 
 <p>I&rsquo;m learning how to build web apps using the <a href="http://rubyonrails.org/">Ruby on Rails</a> framework. <strong>Rails</strong> is a framework based on the <strong>Ruby</strong> language that famously predicates <em>convention over configuration</em>, to help ease the making of web-apps. Share with me in the excitement, adventure and experience points. Hmmm&hellip; on second thought, not the experience points.</p>
 
@@ -109,7 +109,7 @@ Git remote heroku added
 
 <p>The let us make a <strong>view</strong> by creating an index page under app/views/welcome/index.html.erb containing:</p>
 
-<pre><code>    &lt;h2&gt;Tango Translation Database/h2&gt;
+<pre><code>&lt;h2&gt;Tango Translation Database&lt;/h2&gt;
     &lt;p&gt;
       The database is not working yet, but it can tell you the time: &lt;%= Time.now %&gt;
     &lt;/p&gt;
