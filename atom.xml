@@ -4,7 +4,7 @@
   <title><![CDATA[Mr Hyde]]></title>
   <link href="http://alexvicegrab.github.io/atom.xml" rel="self"/>
   <link href="http://alexvicegrab.github.io/"/>
-  <updated>2014-04-27T14:13:17+02:00</updated>
+  <updated>2014-04-27T14:14:29+02:00</updated>
   <id>http://alexvicegrab.github.io/</id>
   <author>
     <name><![CDATA[Alejandro Vicente Grabovetsky]]></name>
@@ -85,8 +85,8 @@ Git remote heroku added
 
 <p>We saw this warning when we first pushed to heroku:</p>
 
-<pre><code>    -----&gt; WARNINGS:
-           Include 'rails_12factor' gem to enable all platform features
+<pre><code>-----&gt; WARNINGS:
+       Include 'rails_12factor' gem to enable all platform features
 </code></pre>
 
 <p>Let&rsquo;s add this _gem) it to project by opening the Gemfile in a text editor and adding at the end:</p>
@@ -110,9 +110,9 @@ gem 'rails_12factor', group: :production
 <p>The let us make a <strong>view</strong> by creating an index page under app/views/welcome/index.html.erb containing:</p>
 
 <pre><code>&lt;h2&gt;Tango Translation Database&lt;/h2&gt;
-    &lt;p&gt;
-      The database is not working yet, but it can tell you the time: &lt;%= Time.now %&gt;
-    &lt;/p&gt;
+&lt;p&gt;
+  The database is not working yet, but it can tell you the time: &lt;%= Time.now %&gt;
+&lt;/p&gt;
 </code></pre>
 
 <p>Then we need to <strong>route</strong> the user to the right place when we open the app by editing the routes in config/routes.rb and adding a line so it looks like:</p>
